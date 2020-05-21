@@ -1,7 +1,6 @@
 package com.cactuskipic.sharecuttly.history;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -16,9 +15,6 @@ import com.cactuskipic.sharecuttly.cuttlyapi.ResponseAna;
 import com.cactuskipic.sharecuttly.cuttlyapi.ResponseURL;
 
 import java.io.File;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 public class HistoryDetailActivity extends CuttlyActivity{
     
@@ -82,8 +78,10 @@ public class HistoryDetailActivity extends CuttlyActivity{
                 ResponseAna responseAna = (ResponseAna) response;
                 ((Button)findViewById(R.id.Button_stats)).setVisibility(View.GONE);
                 
+                ((TextView) findViewById(R.id.text_clicks)).setText(ClicksToString(responseAna));
+                
                 if(responseAna.getGeolocalisations()!=null){
-                    ((TextView) findViewById(R.id.text_geo)).setText(responseAna.getGeolocalisations().toString());
+                    ((TextView) findViewById(R.id.text_bro)).setText(responseAna.getGeolocalisations().toString());
                 }else
                 Log.i(MainActivity.MARK, "No geo.");
                 if(responseAna.getSystems()!=null){
@@ -95,7 +93,7 @@ public class HistoryDetailActivity extends CuttlyActivity{
                 }else
                 Log.i(MainActivity.MARK, "No dev.");
                 if(responseAna.getBrowsers()!=null){
-                    ((TextView) findViewById(R.id.text_bro)).setText(responseAna.getBrowsers().toString());
+                    ((TextView) findViewById(R.id.text_geo)).setText(responseAna.getBrowsers().toString());
                 }else
                 Log.i(MainActivity.MARK, "No bro.");
                 
@@ -112,5 +110,37 @@ public class HistoryDetailActivity extends CuttlyActivity{
             ((Button)findViewById(R.id.Button_stats)).setEnabled(true);
         }
         
+    }
+    
+    public static String ClicksToString(ResponseAna responseAna){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Total clicks: ");
+        sb.append(responseAna.getClicks());
+        if(responseAna.getFacebook()>0){
+            sb.append("\nFacebook: ");
+            sb.append(responseAna.getFacebook());
+        }
+        if(responseAna.getTwitter()>0){
+            sb.append("\nTwitter: ");
+            sb.append(responseAna.getTwitter());
+        }
+        if(responseAna.getInstagram()>0){
+            sb.append("\nInstagram: ");
+            sb.append(responseAna.getInstagram());
+        }
+        if(responseAna.getLinkedin()>0){
+            sb.append("\nLinkedIn: ");
+            sb.append(responseAna.getLinkedin());
+        }
+        if(responseAna.getPinterest()>0){
+            sb.append("\nPinterest: ");
+            sb.append(responseAna.getPinterest());
+        }
+        if(responseAna.getRest()>0){
+            sb.append("\nRest: ");
+            sb.append(responseAna.getRest());
+        }
+        
+        return sb.toString();
     }
 }

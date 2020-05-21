@@ -42,6 +42,38 @@ public class ResponseAna extends Response{
     }
     
     
+    public String getClicks(){
+        return ana.getClicks();
+    }
+    
+    public int getFacebook(){
+        return ana.getFacebook();
+    }
+    
+    public int getTwitter(){
+        return ana.getTwitter();
+    }
+    
+    public int getPinterest(){
+        return ana.getPinterest();
+    }
+    
+    public int getInstagram(){
+        return ana.getInstagram();
+    }
+    
+    public int getGooglePlus(){
+        return ana.getGooglePlus();
+    }
+    
+    public int getLinkedin(){
+        return ana.getLinkedin();
+    }
+    
+    public int getRest(){
+        return ana.getRest();
+    }
+    
     public HashMap<String, Integer> getGeolocalisations(){
         return ana.getGeo();
     }
@@ -111,6 +143,38 @@ public class ResponseAna extends Response{
     
         public HashMap<String, Integer> getBro(){
             return bro;
+        }
+    
+        public String getClicks(){
+            return clicks;
+        }
+    
+        public int getFacebook(){
+            return facebook;
+        }
+    
+        public int getTwitter(){
+            return twitter;
+        }
+    
+        public int getPinterest(){
+            return pinterest;
+        }
+    
+        public int getInstagram(){
+            return instagram;
+        }
+    
+        public int getGooglePlus(){
+            return googlePlus;
+        }
+    
+        public int getLinkedin(){
+            return linkedin;
+        }
+    
+        public int getRest(){
+            return rest;
         }
     }
 }
