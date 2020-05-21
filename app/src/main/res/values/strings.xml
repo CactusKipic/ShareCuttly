@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ShareCuttly</string>
+    <string name="short_link">short link</string>
+    <string name="paste_short"><![CDATA[paste & short]]></string>
+    <string name="paste_link_to_shorten">Paste a link to shorten</string>
+    <string name="name_parameters">Parameters</string>
+    <string name="long_url">Long URL:</string>
+    <string name="short_url">Short URL:</string>
+    <string name="text_menu">Menu</string>
+    <string name="text_shortlink">Short Link</string>
+    <string name="text_history">History</string>
+    <string name="text_deleteitem">Delete this item ?</string>
+    <string name="No">No</string>
+    <string name="Yes">Dew it!</string>
+    <string name="get_stats">Get link\'s stats</string>>
+</resources>
