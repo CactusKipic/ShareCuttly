@@ -1,11 +1,10 @@
 package com.cactuskipic.sharecuttly.cuttlyapi;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.cactuskipic.sharecuttly.CuttlyActivity;
 import com.cactuskipic.sharecuttly.MainActivity;
+import com.cactuskipic.sharecuttly.utils.ContainerCuttlyServiceActivity;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -19,10 +18,10 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class APIRequest extends AsyncTask<Request, Void, Response> {
     
-    private CuttlyActivity activity;
+    private ContainerCuttlyServiceActivity container;
     
-    public APIRequest(CuttlyActivity activity){
-        this.activity = activity;
+    public APIRequest(ContainerCuttlyServiceActivity container){
+        this.container = container;
     }
     
     @Override
@@ -64,6 +63,6 @@ public class APIRequest extends AsyncTask<Request, Void, Response> {
     
     public void onPostExecute(Response response){
             response.setTime(new Date().getTime());
-            activity.GetPostExecute(response);
+            container.GetPostExecute(response);
     }
 }
