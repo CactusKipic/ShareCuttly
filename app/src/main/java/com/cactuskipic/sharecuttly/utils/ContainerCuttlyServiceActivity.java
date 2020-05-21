@@ -1,11 +1,15 @@
-package com.cactuskipic.sharecuttly.cuttlyapi;
+package com.cactuskipic.sharecuttly.utils;
 
 import android.content.Context;
 
 import com.cactuskipic.sharecuttly.CuttlyActivity;
+import com.cactuskipic.sharecuttly.cuttlyapi.Response;
 import com.cactuskipic.sharecuttly.share.CuttlyService;
 
 public class ContainerCuttlyServiceActivity{
+    
+    // C'était une bonne idée, mais finalement inutile (╯°□°）╯︵ ┻━┻
+    // Mais bon, on laisse quand même, ça pourrait être utile
     
     private CuttlyService cuttlyService = null;
     private CuttlyActivity cuttlyActivity = null;

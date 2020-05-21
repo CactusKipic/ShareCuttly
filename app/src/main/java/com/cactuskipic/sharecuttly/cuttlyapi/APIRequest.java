@@ -1,11 +1,10 @@
 package com.cactuskipic.sharecuttly.cuttlyapi;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.cactuskipic.sharecuttly.CuttlyActivity;
 import com.cactuskipic.sharecuttly.MainActivity;
+import com.cactuskipic.sharecuttly.utils.ContainerCuttlyServiceActivity;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

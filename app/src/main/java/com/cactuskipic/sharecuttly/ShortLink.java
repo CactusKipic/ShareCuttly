@@ -4,7 +4,7 @@ import android.util.Patterns;
 import android.widget.Toast;
 
 import com.cactuskipic.sharecuttly.cuttlyapi.APIRequest;
-import com.cactuskipic.sharecuttly.cuttlyapi.ContainerCuttlyServiceActivity;
+import com.cactuskipic.sharecuttly.utils.ContainerCuttlyServiceActivity;
 import com.cactuskipic.sharecuttly.cuttlyapi.Request;
 
 public class ShortLink{

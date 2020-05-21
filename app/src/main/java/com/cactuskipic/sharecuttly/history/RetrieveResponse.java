@@ -6,15 +6,13 @@ import android.widget.Toast;
 import com.cactuskipic.sharecuttly.CuttlyActivity;
 import com.cactuskipic.sharecuttly.MainActivity;
 import com.cactuskipic.sharecuttly.cuttlyapi.APIRequest;
-import com.cactuskipic.sharecuttly.cuttlyapi.ContainerCuttlyServiceActivity;
+import com.cactuskipic.sharecuttly.utils.ContainerCuttlyServiceActivity;
 import com.cactuskipic.sharecuttly.cuttlyapi.Request;
-import com.cactuskipic.sharecuttly.cuttlyapi.Response;
 import com.cactuskipic.sharecuttly.cuttlyapi.ResponseURL;
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;

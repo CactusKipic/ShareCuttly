@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cactuskipic.sharecuttly.cuttlyapi.ContainerCuttlyServiceActivity;
+import com.cactuskipic.sharecuttly.utils.ContainerCuttlyServiceActivity;
 import com.cactuskipic.sharecuttly.cuttlyapi.Response;
 import com.cactuskipic.sharecuttly.cuttlyapi.ResponseURL;
 import com.cactuskipic.sharecuttly.history.HistoryDetailActivity;
@@ -18,7 +18,6 @@ import com.cactuskipic.sharecuttly.history.SaveResponse;
 import com.cactuskipic.sharecuttly.utils.RowHistoryAdapter;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

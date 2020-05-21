@@ -1,19 +1,14 @@
 package com.cactuskipic.sharecuttly.share;
 
-import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cactuskipic.sharecuttly.MainActivity;
-import com.cactuskipic.sharecuttly.R;
-import com.cactuskipic.sharecuttly.ShortLink;
-import com.cactuskipic.sharecuttly.cuttlyapi.ContainerCuttlyServiceActivity;
 import com.cactuskipic.sharecuttly.cuttlyapi.Response;
 import com.cactuskipic.sharecuttly.cuttlyapi.ResponseURL;
 import com.cactuskipic.sharecuttly.history.SaveResponse;
@@ -21,6 +16,8 @@ import com.cactuskipic.sharecuttly.history.SaveResponse;
 import androidx.annotation.Nullable;
 
 public class ShortNCopyService extends CuttlyService{
+    
+    // Not used, cuz you can't receive share intent on a service (╯°□°）╯︵ ┻━┻
     
     @Override
     public void onCreate(){

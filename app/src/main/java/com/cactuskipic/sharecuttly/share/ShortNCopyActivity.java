@@ -11,13 +11,12 @@ import android.widget.Toast;
 import com.cactuskipic.sharecuttly.CuttlyActivity;
 import com.cactuskipic.sharecuttly.MainActivity;
 import com.cactuskipic.sharecuttly.ShortLink;
-import com.cactuskipic.sharecuttly.cuttlyapi.ContainerCuttlyServiceActivity;
+import com.cactuskipic.sharecuttly.utils.ContainerCuttlyServiceActivity;
 import com.cactuskipic.sharecuttly.cuttlyapi.Response;
 import com.cactuskipic.sharecuttly.cuttlyapi.ResponseURL;
 import com.cactuskipic.sharecuttly.history.SaveResponse;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 public class ShortNCopyActivity extends CuttlyActivity{
     
