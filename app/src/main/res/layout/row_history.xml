@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:clickable="true"
+    android:longClickable="true"
     android:onClick="onClick">
 
     <TextView

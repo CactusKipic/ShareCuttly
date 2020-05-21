@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cactuskipic.sharecuttly.history.RetrieveResponse;
 import com.cactuskipic.sharecuttly.utils.ContainerCuttlyServiceActivity;
 import com.cactuskipic.sharecuttly.cuttlyapi.Response;
 import com.cactuskipic.sharecuttly.cuttlyapi.ResponseURL;
@@ -66,7 +67,7 @@ public class MainActivity extends CuttlyActivity{
                         ((TextView) findViewById(R.id.text_link_name)).getText().toString());
                 break;
             case R.id.Button_Params:
-                Toast.makeText(this, "Oh oui mon mignon, touche moi encore <3", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Oh oui mon mignon, touche moi encore <3 (Non implémenté)", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.Button_Menu:
                 findViewById(R.id.sidemenulayout).setVisibility(View.VISIBLE);
@@ -88,6 +89,7 @@ public class MainActivity extends CuttlyActivity{
                 recyclerView.setAdapter(mAdapter);
                 break;
             case R.id.row_history:
+                
                 Intent intent = new Intent(this, HistoryDetailActivity.class);
                 intent.putExtra("Res", (String) v.getTag());
                 Toast.makeText(this,"Tag: "+(String) v.getTag(),Toast.LENGTH_LONG).show();
@@ -96,6 +98,21 @@ public class MainActivity extends CuttlyActivity{
         }
         
     }
+    public static View.OnLongClickListener longClickListener= new View.OnLongClickListener(){
+        public boolean onLongClick (View v){
+        Log.i(MainActivity.MARK, "LongClicked");
+        switch(v.getId()){
+            case R.id.row_history:
+                ResponseURL responseURL = RetrieveResponse.getResponseURL(v.getContext(), (String) v.getTag());
+                ((ClipboardManager) v.getContext().getSystemService(CLIPBOARD_SERVICE)).setPrimaryClip(
+                        ClipData.newPlainText("Shortened link with ShareCuttly", responseURL.getShortLink()));
+                Toast.makeText(v.getContext(), "Short link copied in clipboard", Toast.LENGTH_LONG).show();
+                return true;
+        }
+        
+        return false;
+        }
+    };
     
     private List<String> getHistoryList(){
         File file = new File(getDir(getApplicationInfo().processName, MODE_PRIVATE)+saveLocation);

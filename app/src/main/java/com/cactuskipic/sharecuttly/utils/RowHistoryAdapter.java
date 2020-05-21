@@ -53,7 +53,7 @@ public class RowHistoryAdapter extends RecyclerView.Adapter<RowHistoryAdapter.Vi
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         
         View v = inflater.inflate(R.layout.row_history, parent, false);
-        
+        v.setOnLongClickListener(MainActivity.longClickListener);
         ViewHolder viewHolder = new ViewHolder(v);
         return viewHolder;
     }
