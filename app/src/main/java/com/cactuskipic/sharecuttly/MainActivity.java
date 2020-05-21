@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cactuskipic.sharecuttly.cuttlyapi.ContainerCuttlyServiceActivity;
 import com.cactuskipic.sharecuttly.cuttlyapi.Response;
 import com.cactuskipic.sharecuttly.cuttlyapi.ResponseURL;
 import com.cactuskipic.sharecuttly.history.HistoryDetailActivity;
@@ -58,11 +59,11 @@ public class MainActivity extends CuttlyActivity{
         
         switch(v.getId()){
             case R.id.Button_short:
-                ShortLink.ShortLink(this, ((TextView) findViewById(R.id.text_link)).getText().toString(),
+                ShortLink.ShortLink(new ContainerCuttlyServiceActivity(this), ((TextView) findViewById(R.id.text_link)).getText().toString(),
                         ((TextView) findViewById(R.id.text_link_name)).getText().toString());
                 break;
             case R.id.Button_paste:
-                ShortLink.ShortLink(this, ((ClipboardManager) getSystemService(CLIPBOARD_SERVICE)).getPrimaryClip().getItemAt(0).getText().toString(),
+                ShortLink.ShortLink(new ContainerCuttlyServiceActivity(this), ((ClipboardManager) getSystemService(CLIPBOARD_SERVICE)).getPrimaryClip().getItemAt(0).getText().toString(),
                         ((TextView) findViewById(R.id.text_link_name)).getText().toString());
                 break;
             case R.id.Button_Params:

@@ -19,10 +19,10 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class APIRequest extends AsyncTask<Request, Void, Response> {
     
-    private CuttlyActivity activity;
+    private ContainerCuttlyServiceActivity container;
     
-    public APIRequest(CuttlyActivity activity){
-        this.activity = activity;
+    public APIRequest(ContainerCuttlyServiceActivity container){
+        this.container = container;
     }
     
     @Override
@@ -64,6 +64,6 @@ public class APIRequest extends AsyncTask<Request, Void, Response> {
     
     public void onPostExecute(Response response){
             response.setTime(new Date().getTime());
-            activity.GetPostExecute(response);
+            container.GetPostExecute(response);
     }
 }

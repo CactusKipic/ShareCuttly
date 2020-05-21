@@ -6,6 +6,7 @@ import android.widget.Toast;
 import com.cactuskipic.sharecuttly.CuttlyActivity;
 import com.cactuskipic.sharecuttly.MainActivity;
 import com.cactuskipic.sharecuttly.cuttlyapi.APIRequest;
+import com.cactuskipic.sharecuttly.cuttlyapi.ContainerCuttlyServiceActivity;
 import com.cactuskipic.sharecuttly.cuttlyapi.Request;
 import com.cactuskipic.sharecuttly.cuttlyapi.Response;
 import com.cactuskipic.sharecuttly.cuttlyapi.ResponseURL;
@@ -60,7 +61,7 @@ public class RetrieveResponse{
         
         request.addArgument("stats", responseURL.getShortLink());
         
-        APIRequest apiRequest = new APIRequest(activity);
+        APIRequest apiRequest = new APIRequest(new ContainerCuttlyServiceActivity(activity));
         apiRequest.execute(request);
     
         Toast.makeText(activity.getApplicationContext(),"Retrieving stats for this URL", Toast.LENGTH_SHORT).show();
